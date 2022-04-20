@@ -11,3 +11,4 @@ app.listen(PORT, () => {
 });
 
 app.get('/clientes', Controller.read);
+app.post('/clientes', Controller.create);

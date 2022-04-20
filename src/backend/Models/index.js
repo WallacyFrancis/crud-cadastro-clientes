@@ -1,4 +1,3 @@
-const fs = require('fs');
 const clientes = require('../API');
 
 const read = () => {
@@ -7,8 +6,12 @@ const read = () => {
 };
 
 const create = (obj) => {
-  const result = clientes.push(obj);
-  return result;
+  const result = {
+    id: clientes.length + 1,
+    ...obj,
+  }
+  clientes.push(result);
+  return clientes[clientes.length - 1];
 }
 
 module.exports =  {

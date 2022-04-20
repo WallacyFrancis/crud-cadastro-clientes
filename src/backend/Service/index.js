@@ -5,11 +5,11 @@ const read = () => {
   return data;
 };
 
-// const read = () => {
-//   const data = 'Chegou aqui';
-//   return data;
-// }
-
+const create = (obj) => {
+  const result = Model.create(obj);
+  return result;
+}
 module.exports =  {
   read,
+  create,
 };

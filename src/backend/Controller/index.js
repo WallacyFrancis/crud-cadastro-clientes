@@ -11,7 +11,17 @@ const read = (_req, res) => {
   }
 }
 
+const create = (req, res) => {
+  try {
+    const result = Service.create(req.body);
+    res.status(201).json(result);
+  } catch (e) {
+    res.status(400).json({ message: e.message });
+  }
+}
+
 
 module.exports = {
   read,
+  create,
 };

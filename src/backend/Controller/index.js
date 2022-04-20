@@ -1,9 +1,9 @@
 const Service = require('../Service');
 
 
-const read = async (_req, res) => {
+const read = (_req, res) => {
   try {
-    const data = await Service.read();
+    const data = Service.read();
     if (!data) return res.status(401).json({ message: 'Not found' });
     res.status(200).json(data);
   } catch (e) {

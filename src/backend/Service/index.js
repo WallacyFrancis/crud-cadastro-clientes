@@ -1,7 +1,7 @@
 const Model = require('../Models')
 
-const read = async () => {
-  const data = await Model.read();
+const read = () => {
+  const data = Model.read();
   return data;
 };
 

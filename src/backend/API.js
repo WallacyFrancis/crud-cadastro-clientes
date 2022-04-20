@@ -1,4 +1,4 @@
-[
+const clientes = [
   {
     "id": "1",
     "pessoa": "J",
@@ -179,4 +179,6 @@
     "uf": "mg",
     "observacao": ""
   }
-]
+];
+
+module.exports = clientes;

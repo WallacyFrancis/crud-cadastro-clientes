@@ -1,11 +1,17 @@
 const fs = require('fs');
+const clientes = require('../API');
 
-const read = async () => {
-  const data = await fs.readFileSync('../clientes.json', 'utf-8');
-  const result = JSON.parse(data);
-  return result;
+const read = () => {
+  const data = clientes;
+  return data;
 };
+
+const create = (obj) => {
+  const result = clientes.push(obj);
+  return result;
+}
 
 module.exports =  {
   read,
+  create,
 };

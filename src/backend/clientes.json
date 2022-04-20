@@ -1,12 +1,12 @@
 [
   {
+    "id": "1",
     "pessoa": "J",
     "status": "ativo",
     "nome": "Empresa 1",
     "razao_social": "Empresa 1 LTDA",
     "cpf/cnpj": "12.345.678/0001-12",
     "rg": "",
-    "uf": "mg",
     "im": "000000001",
     "cnh": "",
     "data_nascimento": "",
@@ -25,16 +25,18 @@
     "numero": "1234",
     "complemento": "",
     "bairro": "bairro novo",
-    "cidade": "São Sebastião do Paraíso"
+    "cidade": "São Sebastião do Paraíso",
+    "uf": "mg",
+    "observacao": ""
   },
   {
+    "id": "2",
     "pessoa": "J",
     "status": "ativo",
     "nome": "Empresa 2",
     "razao_social": "Empresa 2 LTDA",
     "cpf/cnpj": "12.345.678/0001-12",
     "rg": "",
-    "uf": "mg",
     "im": "000000001",
     "cnh": "",
     "data_nascimento": "",
@@ -53,16 +55,18 @@
     "numero": "1234",
     "complemento": "",
     "bairro": "bairro novo",
-    "cidade": "São Sebastião do Paraíso"
+    "cidade": "São Sebastião do Paraíso",
+    "uf": "mg",
+    "observacao": ""
   },
   {
+    "id": "3",
     "pessoa": "J",
     "status": "ativo",
     "nome": "Empresa 3",
     "razao_social": "Empresa 3 LTDA",
     "cpf/cnpj": "12.345.678/0001-12",
     "rg": "",
-    "uf": "mg",
     "im": "000000001",
     "cnh": "",
     "data_nascimento": "",
@@ -81,16 +85,18 @@
     "numero": "1234",
     "complemento": "",
     "bairro": "bairro novo",
-    "cidade": "São Sebastião do Paraíso"
+    "cidade": "São Sebastião do Paraíso",
+    "uf": "mg",
+    "observacao": ""
   },
   {
+    "id": "4",
     "pessoa": "J",
     "status": "ativo",
     "nome": "Empresa 4",
     "razao_social": "Empresa 4 LTDA",
     "cpf/cnpj": "12.345.678/0001-12",
     "rg": "",
-    "uf": "mg",
     "im": "000000001",
     "cnh": "",
     "data_nascimento": "",
@@ -109,16 +115,18 @@
     "numero": "1234",
     "complemento": "",
     "bairro": "bairro novo",
-    "cidade": "São Sebastião do Paraíso"
+    "cidade": "São Sebastião do Paraíso",
+    "uf": "mg",
+    "observacao": ""
   },
   {
+    "id": "5",
     "pessoa": "F",
     "status": "",
     "nome": "João Alves",
     "razao_social": "",
     "cpf/cnpj": "123.456.789-00",
     "rg": "12345678",
-    "uf": "mg",
     "im": "",
     "cnh": "1234567812345678",
     "data_nascimento": "01/01/1990",
@@ -137,16 +145,18 @@
     "numero": "1234",
     "complemento": "",
     "bairro": "bairro novo",
-    "cidade": "São Sebastião do Paraíso"
+    "cidade": "São Sebastião do Paraíso",
+    "uf": "mg",
+    "observacao": ""
   },
   {
+    "id": "6",
     "pessoa": "F",
     "status": "",
     "nome": "Maria de Jesus",
     "razao_social": "",
     "cpf/cnpj": "123.456.789-00",
     "rg": "12345678",
-    "uf": "mg",
     "im": "",
     "cnh": "1234567812345678",
     "data_nascimento": "01/01/1990",
@@ -165,6 +175,8 @@
     "numero": "1234",
     "complemento": "",
     "bairro": "bairro novo",
-    "cidade": "São Sebastião do Paraíso"
+    "cidade": "São Sebastião do Paraíso",
+    "uf": "mg",
+    "observacao": ""
   }
 ]

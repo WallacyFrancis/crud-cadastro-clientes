@@ -1,15 +1,15 @@
-import Model from "../Models";
+const Model = require('../Models')
 
-class Service {
-  constructor(model) {
-    model = Model;
-  };
+const read = async () => {
+  const data = await Model.read();
+  return data;
+};
 
-  async read() {
-    const data = await this.model.read();
-    return data;
-  }
-}
+// const read = () => {
+//   const data = 'Chegou aqui';
+//   return data;
+// }
 
-export default Service;
-
+module.exports =  {
+  read,
+};

@@ -1,14 +1,17 @@
-import Service from "../Service";
+const Service = require('../Service');
 
-class Controller {
-  constructor(service) {
-    service = Service;
-  }
 
-  async read() {
-    const data = await this.service.read();
-    return data;
+const read = async (_req, res) => {
+  try {
+    const data = await Service.read();
+    if (!data) return res.status(401).json({ message: 'Not found' });
+    res.status(200).json(data);
+  } catch (e) {
+    res.status(500).json({ message: e.message });
   }
 }
 
-export default Controller;
+
+module.exports = {
+  read,
+};

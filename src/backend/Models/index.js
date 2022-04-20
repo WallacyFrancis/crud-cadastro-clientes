@@ -1,12 +1,11 @@
 const fs = require('fs');
-const db = require('../clientes.json');
 
-class Model {
-  async read() {
-    const data = await fs.readFileSync(db);
-    console.log(JSON.parse(data));
-    return JSON.parse(data);
-  }
-}
+const read = async () => {
+  const data = await fs.readFileSync('../clientes.json', 'utf-8');
+  const result = JSON.parse(data);
+  return result;
+};
 
-export default Model;
+module.exports =  {
+  read,
+};

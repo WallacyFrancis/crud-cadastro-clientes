@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+// import FormPJ from "../Components/FormPJ";
+import FormPF from "../Components/FormPF";
 
 class Form extends Component {
   render() {
@@ -7,15 +9,13 @@ class Form extends Component {
         <fieldset>
           <h3>Tipo de Pessoa</h3>
           <label>
-            <input type="radio" name="cpf" /> Pessoa Fisica
+            <input type="radio" name="pessoa" value="pf" checked /> Pessoa Fisica
           </label>
           <label>
-            <input type="radio" name="cnpj" /> Pessoa Juridica
+            <input type="radio" name="pessoa" value="pj" /> Pessoa Juridica
           </label>
         </fieldset>
-        <fieldset>
-
-        </fieldset>
+          <FormPF />
       </form>
     );
   }

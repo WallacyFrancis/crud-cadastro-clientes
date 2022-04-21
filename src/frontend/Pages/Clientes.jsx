@@ -4,6 +4,7 @@ import { AiOutlineUserAdd } from 'react-icons/ai';
 import { BsFillPencilFill } from 'react-icons/bs'
 import { RiDeleteBack2Line } from 'react-icons/ri'
 import { requestData } from "../services/request";
+import clientes from '../../backend/API';
 
 class Clientes extends Component {
   constructor() {
@@ -11,6 +12,7 @@ class Clientes extends Component {
 
     this.state = {
       clientes: [],
+      dataTable: [],
     }
 
   }
@@ -23,6 +25,12 @@ class Clientes extends Component {
     } catch (e) {
       console.log(e);
     }
+  }
+
+  deleteClient(id) {
+    const result = clientes.filter((cliente) => cliente.id !== id );
+    this.setState({ clientes: result });
+    console.log(clientes);
   }
 
   componentDidMount() {
@@ -57,8 +65,8 @@ class Clientes extends Component {
                 <td>{ cliente.email }</td>
                 <td>{ cliente.telefone }</td>
                 <td>{ cliente.celular }</td>
-                <td><BsFillPencilFill/></td>
-                <td><RiDeleteBack2Line/></td>
+                <td onClick={() => console.log(cliente.id)} ><BsFillPencilFill/></td>
+                <td onClick={() => this.deleteClient(cliente.id)} ><RiDeleteBack2Line/></td>
               </tr>
             ))  : 'Carregando...'  
           }

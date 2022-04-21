@@ -4,7 +4,7 @@ import Context from './Context';
 
 function Provider({ children }) {
 
-  const [person, setPerson] = useState('cpf');
+  const [person, setPerson] = useState('pj');
 
   function handleChange({target: { value }}) {
     setPerson(value);

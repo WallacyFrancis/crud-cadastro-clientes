@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FormPFUpdate from '../Components/FormPFUpdate';
+import FormPJUpdate from '../Components/FormPJUpdate';
 import { requestData } from "../services/request";
 
 class FormUpdate extends Component {
@@ -30,7 +31,7 @@ class FormUpdate extends Component {
   render() {
     const { person } = this.state;
     return (
-      <div>{ person.pessoa === 'F' ? <FormPFUpdate cliente={ person } /> : 'Pessoa Jurídica' }</div>
+      <div>{ person.pessoa === 'J' ? <FormPJUpdate cliente={ person } /> : <FormPFUpdate cliente={ person } /> }</div>
     )
   }
 }

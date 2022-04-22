@@ -14,5 +14,5 @@ app.listen(PORT, () => {
 
 app.get('/clientes', Controller.read);
 app.post('/clientes/cadastro', Controller.create);
-app.put('/clientes/:id', Controller.update);
+app.put('/clientes/atualizar/:id', Controller.update);
 app.delete('/clientes/:id', Controller.remove);

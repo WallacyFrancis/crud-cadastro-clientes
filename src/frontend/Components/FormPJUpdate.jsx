@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
 import { updateData } from "../services/request";
 
-class FormPFUpdate extends Component {
+class FormPJUpdate extends Component {
   constructor(props) {
     super(props);
 
@@ -50,23 +50,39 @@ class FormPFUpdate extends Component {
     const value = target.value;
     const { person } = this.state;
     switch(element) {
-      case 'nome':
-        this.setState({ person: { ...person, nome: value } });
+      case 'raz-social':
+        this.setState({ person: { ...person, razao_social: value } });
         break;
       case 'nome-fantasia':
-        this.setState({ person: { ...person, razao_social: value } });
+        this.setState({ person: { ...person, nome: value } });
         break;
       case 'cpf-cnpj':
         this.setState({ person: { ...person, cpf_cnpj: value } });
         break;
-      case 'nasc':
-        this.setState({ person: { ...person, data_nascimento: value } });
+      case 'status':
+        this.setState({ person: { ...person, status: 'ativo' } });
+        console.log(person)
         break;
-      case 'rg':
-        this.setState({ person: { ...person, rg: value } });
+      case 'ie':
+        this.setState({ person: { ...person, cpf_cnpj: value } });
+        break;
+      case 'im':
+        this.setState({ person: { ...person, cpf_cnpj: value } });
         break;
       case 'email':
         this.setState({ person: { ...person, email: value } });
+        break;
+      case 'nome-responsavel':
+        this.setState({ person: { ...person, nome_responsavel: value } });
+        break;
+      case 'cpf-responsavel':
+        this.setState({ person: { ...person, cpf_responsavel: value } });
+        break;
+      case 'nasc-responsavel':
+        this.setState({ person: { ...person, nascimento_responsavel: value } });
+        break;
+      case 'email-responsavel':
+        this.setState({ person: { ...person, email_responsavel: value } });
         break;
       case 'telefone':
         this.setState({ person: { ...person, telefone: value } });
@@ -90,7 +106,7 @@ class FormPFUpdate extends Component {
         this.setState({ person: { ...person, numero: value } });
         break;
       case 'complemento':
-        this.setState({ person: { ...person, tipo_logradouro: value } });
+        this.setState({ person: { ...person, complemento: value } });
         break;
       case 'bairro':
         this.setState({ person: { ...person, bairro: value } });
@@ -124,75 +140,25 @@ class FormPFUpdate extends Component {
     console.log(person);
     return(
       <div>
-        <h3>Atualização de cadastro pessoa física</h3>
+        <h3>Atualização de cadastro pessoa jurídica</h3>
         <form>
           <fieldset>
             <label>
-              Nome
-              <input type="text" name="nome" value={ person.nome } onChange={ (e) => this.hadleChange(e) } />
+                Nome Fantasia
+                <input type="text" name="nome-fantasia" value={ person.nome }  onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
-              Apelido
-              <input type="text" name="nome-fantasia" value={ person.razao_social }  onChange={ (e) => this.hadleChange(e) } />
-            </label>
-            <br />
-            <label>
-              CPF
-              <input type="text" name="cpf-cnpj" value={ person.cpf_cnpj } onChange={ (e) => this.hadleChange(e) } />
+              Razão Social
+              <input type="text" name="raz-social" value={ person.razao_social } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
-              Data de Nascimento
-              <input type="date" name="nasc" value={ person.data_nascimento } onChange={ (e) => this.hadleChange(e) } />
-            </label>
-            <label>
-              Estado Cívil
-              <select name="status">
-                <option value="s">Solteiro(a)</option>
-                <option value="c">Casado(a)</option>
-                <option value="d">Divorciado(a)</option>
-                <option value="v">Viúvo(a)</option>
-              </select>
+              CNPJ
+              <input type="text" name="rg" value={ person.cpf_cnpj } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <br />
             <label>
-              RG/RNE
-              <input type="text" name="rg" value={ person.rg } onChange={ (e) => this.hadleChange(e) } />
-            </label>
-            <label>
-              Orgão Emissor
-              <input type="text" name="org-emi" />
-            </label>
-            <label>
-              UF
-              <select name="uf-rg">
-                <option value="AC">AC</option>
-                <option value="AL">AL</option>
-                <option value="AP">AP</option>
-                <option value="AM">AM</option>
-                <option value="BA">BA</option>
-                <option value="CE">CE</option>
-                <option value="DF">DF</option>
-                <option value="ES">ES</option>
-                <option value="GO">GO</option>
-                <option value="MA">MA</option>
-                <option value="MT">MT</option>
-                <option value="MS">MS</option>
-                <option value="MG">MG</option>
-                <option value="PA">PA</option>
-                <option value="PB">PB</option>
-                <option value="PR">PR</option>
-                <option value="PE">PE</option>
-                <option value="PI">PI</option>
-                <option value="RJ">RJ</option>
-                <option value="RN">RN</option>
-                <option value="RS">RS</option>
-                <option value="RO">RO</option>
-                <option value="RR">RR</option>
-                <option value="SC">SC</option>
-                <option value="SP">SP</option>
-                <option value="SE">SE</option>
-                <option value="TO">TO</option>
-              </select>
+              Insc. Municipal
+              <input type="text" name="rg" value={ person.im } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <br />
             <label>
@@ -210,6 +176,32 @@ class FormPFUpdate extends Component {
             </label>
           </fieldset>
           <fieldset>
+            <label>
+                Nome do Responsável 
+                <input type="text" name="nome-responsavel" value={ person.celular } onChange={ (e) => this.hadleChange(e) } />
+            </label>
+            <label>
+                CPF
+                <input type="text" name="cpf-responsavel" value={ person.cpf_responsavel } onChange={ (e) => this.hadleChange(e) } />
+            </label>
+            <label>
+              Data de Nascimento
+              <input type="date" name="nasc-responsavel" value={ person.nascimento_responsavel } onChange={ (e) => this.hadleChange(e)} />
+            </label>
+            <br />
+            <label>
+                Telefone
+                <input type="text" name="telefone" value={ person.telefone_responseval } onChange={ (e) => this.hadleChange(e) } />
+            </label>
+            <label>
+                Celular
+                <input type="text" name="celular" value={ person.celular_responsavel } onChange={ (e) => this.hadleChange(e) } />
+            </label>
+            <label>
+                E-mail
+                <input type="text" name="email" value={ person.email_responsavel } onChange={ (e) => this.hadleChange(e) } />
+            </label>
+            <br />
             <label>
               CEP
               <input type="text" name="cep" value={ person.cep } onChange={ (e) => this.hadleChange(e) } />
@@ -283,5 +275,4 @@ class FormPFUpdate extends Component {
   }
 }
 
-export default FormPFUpdate;
-
+export default FormPJUpdate;

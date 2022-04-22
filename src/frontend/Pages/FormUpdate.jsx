@@ -30,7 +30,7 @@ class FormUpdate extends Component {
   render() {
     const { person } = this.state;
     return (
-      <div>{ person.pessoa === 'F' ? <FormPFUpdate nome="Wallacy" /> : 'Pessoa Jurídica' }</div>
+      <div>{ person.pessoa === 'F' ? <FormPFUpdate cliente={ person } /> : 'Pessoa Jurídica' }</div>
     )
   }
 }

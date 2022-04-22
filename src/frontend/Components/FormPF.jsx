@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { createData } from '../services/request';
 import { validatePF } from '../services/validacoes';
 
@@ -260,7 +261,7 @@ class FormPF extends Component {
         </fieldset>
         <div className="form-cad-button">
           <button onClick={ (e) => this.hadleClick(e) }>Salvar</button>
-          <button>Cancelar</button>
+          <Link to="/clientes">Cancelar</Link>
         </div>
       </div>
     )

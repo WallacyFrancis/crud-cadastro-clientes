@@ -129,23 +129,28 @@ class FormPFUpdate extends Component {
           <fieldset>
             <label>
               Nome
+              <br />
               <input type="text" name="nome" value={ person.nome } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Apelido
+              <br />
               <input type="text" name="nome-fantasia" value={ person.razao_social }  onChange={ (e) => this.hadleChange(e) } />
             </label>
             <br />
             <label>
               CPF
+              <br />
               <input type="text" name="cpf-cnpj" value={ person.cpf_cnpj } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Data de Nascimento
+              <br />
               <input type="date" name="nasc" value={ person.data_nascimento } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Estado Cívil
+              <br />
               <select name="status">
                 <option value="s">Solteiro(a)</option>
                 <option value="c">Casado(a)</option>
@@ -156,14 +161,17 @@ class FormPFUpdate extends Component {
             <br />
             <label>
               RG/RNE
+              <br />
               <input type="text" name="rg" value={ person.rg } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Orgão Emissor
+              <br />
               <input type="text" name="org-emi" />
             </label>
             <label>
               UF
+              <br />
               <select name="uf-rg">
                 <option value="AC">AC</option>
                 <option value="AL">AL</option>
@@ -196,30 +204,36 @@ class FormPFUpdate extends Component {
             </label>
             <br />
             <label>
-              E-mail 
+              E-mail
+              <br />
               <input type="email" name="email" value={ person.email } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <br />
             <label>
-              Telefone 
+              Telefone
+              <br />
               <input type="text" name="telefone" value={ person.telefone } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
-              Celular 
+              Celular
+              <br />
               <input type="text" name="celular" value={ person.celular } onChange={ (e) => this.hadleChange(e) } />
             </label>
           </fieldset>
           <fieldset>
             <label>
               CEP
+              <br />
               <input type="text" name="cep" value={ person.cep } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Cidade
+              <br />
               <input type="text" name="cidade" value={ person.cidade } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               UF
+              <br />
               <select name="uf" value={ person.uf } onChange={ (e) => this.hadleChange(e) } >
                 <option value="AC">AC</option>
                 <option value="AL">AL</option>
@@ -253,30 +267,36 @@ class FormPFUpdate extends Component {
             <br />
             <label>
               Endereço
+              <br />
               <input type="text" name="endereco" value={ person.logradouro } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Número
+              <br />
               <input type="text" name="numero" value={ person.numero } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <br />
             <label>
               Complemento
+              <br />
               <input type="text" name="complemento" value={ person.tipo_logradouro } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Bairro
+              <br />
               <input type="text" name="bairro" value={ person.bairro } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <br />
             <label>
               Observação
               <br />
-              <textarea name="observacao" cols="30" rows="10" value={ person.observacao } onChange={ (e) => this.hadleChange(e) } />
+              <textarea name="observacao" cols="60" rows="10" value={ person.observacao } onChange={ (e) => this.hadleChange(e) } />
             </label>
           </fieldset>
-          <button onClick={ (e) => this.handleClick(e) }>Atualizar</button>
-          <button><Link to="/clientes">Cancelar</Link></button>
+          <div className="form-cad-button">
+            <button onClick={ (e) => this.handleClick(e) }>Atualizar</button>
+            <button><Link to="/clientes">Cancelar</Link></button>
+          </div>
         </form>
       </div>
     )

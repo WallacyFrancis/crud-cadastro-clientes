@@ -145,69 +145,84 @@ class FormPJUpdate extends Component {
           <fieldset>
             <label>
                 Nome Fantasia
+                <br />
                 <input type="text" name="nome-fantasia" value={ person.nome }  onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Razão Social
+              <br />
               <input type="text" name="raz-social" value={ person.razao_social } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               CNPJ
+              <br />
               <input type="text" name="rg" value={ person.cpf_cnpj } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <br />
             <label>
               Insc. Municipal
+              <br />
               <input type="text" name="rg" value={ person.im } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <br />
             <label>
-              E-mail 
+              E-mail
+              <br />
               <input type="email" name="email" value={ person.email } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <br />
             <label>
-              Telefone 
+              Telefone
+              <br />
               <input type="text" name="telefone" value={ person.telefone } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
-              Celular 
+              Celular
+              <br />
               <input type="text" name="celular" value={ person.celular } onChange={ (e) => this.hadleChange(e) } />
             </label>
           </fieldset>
           <fieldset>
             <label>
-                Nome do Responsável 
+                Nome do Responsável
+                <br /> 
                 <input type="text" name="nome-responsavel" value={ person.celular } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
                 CPF
+                <br />
                 <input type="text" name="cpf-responsavel" value={ person.cpf_responsavel } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Data de Nascimento
+              <br />
               <input type="date" name="nasc-responsavel" value={ person.nascimento_responsavel } onChange={ (e) => this.hadleChange(e)} />
             </label>
             <br />
             <label>
                 Telefone
+                <br />
                 <input type="text" name="telefone" value={ person.telefone_responseval } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
                 Celular
+                <br />
                 <input type="text" name="celular" value={ person.celular_responsavel } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
                 E-mail
+                <br />
                 <input type="text" name="email" value={ person.email_responsavel } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <br />
             <label>
               CEP
+              <br />
               <input type="text" name="cep" value={ person.cep } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Cidade
+              <br />
               <input type="text" name="cidade" value={ person.cidade } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
@@ -245,30 +260,36 @@ class FormPJUpdate extends Component {
             <br />
             <label>
               Endereço
+              <br />
               <input type="text" name="endereco" value={ person.logradouro } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Número
+              <br />
               <input type="text" name="numero" value={ person.numero } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <br />
             <label>
               Complemento
+              <br />
               <input type="text" name="complemento" value={ person.tipo_logradouro } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Bairro
+              <br />
               <input type="text" name="bairro" value={ person.bairro } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <br />
             <label>
               Observação
               <br />
-              <textarea name="observacao" cols="30" rows="10" value={ person.observacao } onChange={ (e) => this.hadleChange(e) } />
+              <textarea name="observacao" cols="60" rows="10" value={ person.observacao } onChange={ (e) => this.hadleChange(e) } />
             </label>
           </fieldset>
-          <button onClick={ (e) => this.handleClick(e) }>Atualizar</button>
-          <button><Link to="/clientes">Cancelar</Link></button>
+          <div className="form-cad-button" >
+            <button onClick={ (e) => this.handleClick(e) }>Atualizar</button>
+            <button><Link to="/clientes">Cancelar</Link></button>
+          </div>
         </form>
       </div>
     )

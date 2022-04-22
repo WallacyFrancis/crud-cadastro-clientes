@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FormPFUpdate from '../Components/FormPFUpdate';
 import FormPJUpdate from '../Components/FormPJUpdate';
 import { requestData } from "../services/request";
+import './App.css';
 
 class FormUpdate extends Component {
   constructor() {
@@ -31,7 +32,7 @@ class FormUpdate extends Component {
   render() {
     const { person } = this.state;
     return (
-      <div>
+      <div className="form-cad">
         <div>{ person.pessoa === 'J' && <FormPJUpdate cliente={ person } /> }</div>
         <div>{ person.pessoa === 'F' && <FormPFUpdate cliente={ person } /> }</div>
       </div>

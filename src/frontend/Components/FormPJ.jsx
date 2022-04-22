@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { createData } from "../services/request";
 import { validatePJ } from '../services/validacoes';
+import { Link } from 'react-router-dom';
 
 class FormPJ extends Component {
   constructor() {
@@ -260,7 +261,7 @@ class FormPJ extends Component {
         </fieldset>
         <div className="form-cad-button">
           <button onClick={ (e) => this.hadleClick(e) }>Salvar</button>
-          <button>Cancelar</button>
+          <Link to="/clientes">Cancelar</Link>
         </div>
       </div>
     )

@@ -9,4 +9,9 @@ export const requestData = async (endpoint) => {
   return data;
 }
 
+export const deleteData = async (endpoint) => {
+  const { data } = await api.delete(endpoint)
+  return data;
+}
+
 export default api;

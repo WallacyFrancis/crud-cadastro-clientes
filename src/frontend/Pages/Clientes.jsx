@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { AiOutlineUserAdd } from 'react-icons/ai';
 import { BsFillPencilFill } from 'react-icons/bs'
 import { RiDeleteBack2Line } from 'react-icons/ri'
-import { requestData } from "../services/request";
-import clientes from '../../backend/API';
+import { requestData, deleteData } from "../services/request";
+// import clientes from '../../backend/API';
 
 class Clientes extends Component {
   constructor() {
@@ -20,18 +20,18 @@ class Clientes extends Component {
     try {
       const data = await requestData('/clientes');
       this.setState({ clientes: data });
-      localStorage.setItem('clientes', JSON.stringify(data));
-      return this.clientes;
     } catch (e) {
       console.log(e);
     }
   }
 
-  deleteClient(id) {
-    const result = clientes.filter((cliente) => cliente.id !== id );
-    this.setState({ clientes: [] });
-    this.setState({ clientes: result });
-    console.log(clientes);
+  async deleteClient(id) {
+    try {
+      const data = await deleteData(`/clientes/${id}`);
+      this.setState({ clientes: data });
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   componentDidMount() {

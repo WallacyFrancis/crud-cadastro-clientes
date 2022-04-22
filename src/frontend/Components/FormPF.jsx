@@ -59,7 +59,7 @@ class FormPF extends Component {
         this.setState({ personPF: { ...personPF, numero: value } });
         break;
       case 'complemento':
-        this.setState({ personPF: { ...personPF, complemento: value } });
+        this.setState({ personPF: { ...personPF, tipo_logradouro: value } });
         break;
       case 'bairro':
         this.setState({ personPF: { ...personPF, bairro: value } });

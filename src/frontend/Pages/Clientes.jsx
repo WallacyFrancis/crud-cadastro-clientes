@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { AiOutlineUserAdd } from 'react-icons/ai';
 import { BsFillPencilFill } from 'react-icons/bs'
 import { RiDeleteBack2Line } from 'react-icons/ri'
+import { BiArrowBack } from 'react-icons/bi';
 import { requestData, deleteData } from "../services/request";
-// import clientes from '../../backend/API';
 
 class Clientes extends Component {
   constructor() {
@@ -46,6 +46,7 @@ class Clientes extends Component {
           <Link to="/clientes/cadastro">
             Criar Novo <AiOutlineUserAdd/>
           </Link>
+          <Link to="/">Voltar<BiArrowBack /></Link>
         </header>
         <div>
          <table>

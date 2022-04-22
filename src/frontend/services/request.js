@@ -14,4 +14,9 @@ export const deleteData = async (endpoint) => {
   return data;
 }
 
+export const createData = async (endpoint, body) => {
+  const { data } = await api.post(endpoint, body)
+  return data;
+}
+
 export default api;

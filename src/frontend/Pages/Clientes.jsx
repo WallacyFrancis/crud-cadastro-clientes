@@ -12,7 +12,6 @@ class Clientes extends Component {
 
     this.state = {
       clientes: [],
-      dataTable: [],
     }
 
   }
@@ -21,6 +20,7 @@ class Clientes extends Component {
     try {
       const data = await requestData('/clientes');
       this.setState({ clientes: data });
+      localStorage.setItem('clientes', JSON.stringify(data));
       return this.clientes;
     } catch (e) {
       console.log(e);
@@ -29,6 +29,7 @@ class Clientes extends Component {
 
   deleteClient(id) {
     const result = clientes.filter((cliente) => cliente.id !== id );
+    this.setState({ clientes: [] });
     this.setState({ clientes: result });
     console.log(clientes);
   }

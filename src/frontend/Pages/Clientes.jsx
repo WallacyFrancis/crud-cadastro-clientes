@@ -36,7 +36,7 @@ class Clientes extends Component {
 
   updateClient(e, id) {
     e.preventDefault();
-    window.location.href(`/clientes/atualizar/${id}`)
+    window.location.href(`http://clocalhost:3000/clientes/atualizar/${id}`)
   }
 
   componentDidMount() {
@@ -72,7 +72,7 @@ class Clientes extends Component {
                 <td>{ cliente.email }</td>
                 <td>{ cliente.telefone }</td>
                 <td>{ cliente.celular }</td>
-                <td onClick={(e) => this.updateClient(e, cliente.id)} ><BsFillPencilFill/></td>
+                <td><Link to={ `/clientes/atualizar/${cliente.id}` } ><BsFillPencilFill/></Link></td>
                 <td onClick={() => this.deleteClient(cliente.id)} ><RiDeleteBack2Line/></td>
               </tr>
             ))  : 'Carregando...'  

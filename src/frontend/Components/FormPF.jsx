@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import { createData } from "../services/request";
+import React, { Component } from 'react';
+import { createData } from '../services/request';
+import { validatePF } from '../services/validacoes';
 
 class FormPF extends Component {
   constructor() {
@@ -73,11 +74,15 @@ class FormPF extends Component {
   }
 
   async hadleClick(e) {
+    e.preventDefault();
+    const { personPF } = this.state;
     try {
-      e.preventDefault();
-      const { personPF } = this.state;
-      await createData('/clientes/cadastro', personPF);
-      window.location.href = 'http://localhost:3000/clientes'
+      if (!validatePF(personPF)) {
+        return;
+      } else {
+        await createData('/clientes/cadastro', personPF);
+        window.location.href = 'http://localhost:3000/clientes'
+      }
     } catch (e) {
       console.log(e)
     }

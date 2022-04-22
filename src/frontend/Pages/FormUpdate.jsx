@@ -31,7 +31,10 @@ class FormUpdate extends Component {
   render() {
     const { person } = this.state;
     return (
-      <div>{ person.pessoa === 'J' ? <FormPJUpdate cliente={ person } /> : <FormPFUpdate cliente={ person } /> }</div>
+      <div>
+        <div>{ person.pessoa === 'J' && <FormPJUpdate cliente={ person } /> }</div>
+        <div>{ person.pessoa === 'F' && <FormPFUpdate cliente={ person } /> }</div>
+      </div>
     )
   }
 }

@@ -4,8 +4,9 @@ import { createData } from "../services/request";
 class FormPJ extends Component {
   constructor() {
     super();
+    
     this.state = {
-      personPf: {
+      personPJ: {
         pessoa: 'J',
         status: 'inativo',
         uf: 'AL'
@@ -16,71 +17,71 @@ class FormPJ extends Component {
   hadleChange({ target }) {
     const element = target.name;
     const value = target.value;
-    const { personPf } = this.state;
+    const { personPJ } = this.state;
     switch(element) {
       case 'raz-social':
-        this.setState({ personPf: { ...personPf, razao_social: value } });
+        this.setState({ personPJ: { ...personPJ, razao_social: value } });
         break;
       case 'nome-fantasia':
-        this.setState({ personPf: { ...personPf, nome: value } });
+        this.setState({ personPJ: { ...personPJ, nome: value } });
         break;
       case 'cpf-cnpj':
-        this.setState({ personPf: { ...personPf, cpf_cnpj: value } });
+        this.setState({ personPJ: { ...personPJ, cpf_cnpj: value } });
         break;
       case 'status':
-        this.setState({ personPf: { ...personPf, status: 'ativo' } });
-        console.log(personPf)
+        this.setState({ personPJ: { ...personPJ, status: 'ativo' } });
+        console.log(personPJ)
         break;
       case 'ie':
-        this.setState({ personPf: { ...personPf, cpf_cnpj: value } });
+        this.setState({ personPJ: { ...personPJ, cpf_cnpj: value } });
         break;
       case 'im':
-        this.setState({ personPf: { ...personPf, cpf_cnpj: value } });
+        this.setState({ personPJ: { ...personPJ, cpf_cnpj: value } });
         break;
       case 'email':
-        this.setState({ personPf: { ...personPf, email: value } });
+        this.setState({ personPJ: { ...personPJ, email: value } });
         break;
       case 'nome-responsavel':
-        this.setState({ personPf: { ...personPf, nome_responsavel: value } });
+        this.setState({ personPJ: { ...personPJ, nome_responsavel: value } });
         break;
       case 'cpf-responsavel':
-        this.setState({ personPf: { ...personPf, cpf_responsavel: value } });
+        this.setState({ personPJ: { ...personPJ, cpf_responsavel: value } });
         break;
       case 'nasc-responsavel':
-        this.setState({ personPf: { ...personPf, nascimento_responsavel: value } });
+        this.setState({ personPJ: { ...personPJ, nascimento_responsavel: value } });
         break;
       case 'email-responsavel':
-        this.setState({ personPf: { ...personPf, email_responsavel: value } });
+        this.setState({ personPJ: { ...personPJ, email_responsavel: value } });
         break;
       case 'telefone':
-        this.setState({ personPf: { ...personPf, telefone: value } });
+        this.setState({ personPJ: { ...personPJ, telefone: value } });
         break;
       case 'celular':
-        this.setState({ personPf: { ...personPf, celular: value } });
+        this.setState({ personPJ: { ...personPJ, celular: value } });
         break;
       case 'cep':
-        this.setState({ personPf: { ...personPf, cep: value } });
+        this.setState({ personPJ: { ...personPJ, cep: value } });
         break;
       case 'cidade':
-        this.setState({ personPf: { ...personPf, cidade: value } });
+        this.setState({ personPJ: { ...personPJ, cidade: value } });
         break;
       case 'uf':
-        this.setState({ personPf: { ...personPf, uf: value } });
+        this.setState({ personPJ: { ...personPJ, uf: value } });
         break;
       case 'endereco':
-        this.setState({ personPf: { ...personPf, logradouro: value } });
+        this.setState({ personPJ: { ...personPJ, logradouro: value } });
         break;
       case 'numero':
-        this.setState({ personPf: { ...personPf, numero: value } });
+        this.setState({ personPJ: { ...personPJ, numero: value } });
         break;
       case 'complemento':
-        this.setState({ personPf: { ...personPf, complemento: value } });
+        this.setState({ personPJ: { ...personPJ, complemento: value } });
         break;
       case 'bairro':
-        this.setState({ personPf: { ...personPf, bairro: value } });
+        this.setState({ personPJ: { ...personPJ, bairro: value } });
         break;
       case 'observacao':
-        this.setState({ personPf: { ...personPf, observacao: value } });
+        this.setState({ personPJ: { ...personPJ, observacao: value } });
         break;
       default:
         console.log('Objeto não identificado');
@@ -90,10 +91,10 @@ class FormPJ extends Component {
   async hadleClick(e) {
     try {
       e.preventDefault();
-      const { personPf } = this.state;
-      await createData('/clientes/cadastro', personPf);
+      const { personPJ } = this.state;
+      await createData('/clientes/cadastro', personPJ);
       window.location.href = 'http://localhost:3000/clientes'
-      console.log(personPf);
+      console.log(personPJ);
     } catch (e) {
       console.log(e)
     }

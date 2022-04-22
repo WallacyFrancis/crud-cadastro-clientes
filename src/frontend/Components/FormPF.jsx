@@ -94,23 +94,28 @@ class FormPF extends Component {
         <fieldset>
           <label>
             Nome
+            <br />
             <input type="text" name="nome" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <label>
             Apelido
+            <br />
             <input type="text" name="nome-fantasia" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <br />
           <label>
             CPF
+            <br />
             <input type="text" name="cpf-cnpj" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <label>
             Data de Nascimento
+            <br />
             <input type="date" name="nasc" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <label>
             Estado Cívil
+            <br />
             <select name="status">
               <option value="s">Solteiro(a)</option>
               <option value="c">Casado(a)</option>
@@ -121,14 +126,17 @@ class FormPF extends Component {
           <br />
           <label>
             RG/RNE
+            <br />
             <input type="text" name="rg" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <label>
             Orgão Emissor
+            <br />
             <input type="text" name="org-emi" />
           </label>
           <label>
             UF
+            <br />
             <select name="uf-rg">
               <option value="AC">AC</option>
               <option value="AL">AL</option>
@@ -161,30 +169,36 @@ class FormPF extends Component {
           </label>
           <br />
           <label>
-            E-mail 
+            E-mail
+            <br />
             <input type="email" name="email" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <br />
           <label>
-            Telefone 
+            Telefone
+            <br />
             <input type="text" name="telefone" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <label>
-            Celular 
+            Celular
+            <br />
             <input type="text" name="celular" onChange={ (e) => this.hadleChange(e) } />
           </label>
         </fieldset>
         <fieldset>
           <label>
             CEP
+            <br />
             <input type="text" name="cep" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <label>
             Cidade
+            <br />
             <input type="text" name="cidade" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <label>
             UF
+            <br />
             <select name="uf" onChange={ (e) => this.hadleChange(e) } >
               <option value="AC">AC</option>
               <option value="AL">AL</option>
@@ -218,29 +232,33 @@ class FormPF extends Component {
           <br />
           <label>
             Endereço
+            <br />
             <input type="text" name="endereco" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <label>
             Número
+            <br />
             <input type="text" name="numero" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <br />
           <label>
             Complemento
+            <br />
             <input type="text" name="complemento" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <label>
             Bairro
+            <br />
             <input type="text" name="bairro" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <br />
           <label>
             Observação
             <br />
-            <textarea name="observacao" cols="30" rows="10" onChange={ (e) => this.hadleChange(e) } />
+            <textarea name="observacao" cols="60" rows="10" onChange={ (e) => this.hadleChange(e) } />
           </label>
         </fieldset>
-        <div>
+        <div className="form-cad-button">
           <button onClick={ (e) => this.hadleClick(e) }>Salvar</button>
           <button>Cancelar</button>
         </div>

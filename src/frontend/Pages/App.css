@@ -1,0 +1,153 @@
+.menu {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-top: 10%;
+  color: rgb(21, 100, 202);
+}
+
+.menu h1 {
+  margin-bottom: 40px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: rgb(248, 247, 247);
+  margin: 20px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: rgb(21, 100, 202);
+  border-radius: 10px;
+}
+
+.menu a:hover {
+  background-color: rgb(56, 132, 231);
+}
+
+.list {
+  text-align: center;
+  align-items: center;
+}
+
+.list-header {
+  height: 50px;
+  padding-top: 30px;
+}
+
+.list-header a {
+  text-decoration: none;
+  color: rgb(248, 247, 247);
+  margin: 20px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: rgb(21, 100, 202);
+  border-radius: 10px;
+}
+
+.list-header a:hover {
+  background-color: rgb(56, 132, 231);
+}
+
+.list-header input {
+  border: 1px solid rgb(21, 100, 202);
+  height: 25px;
+  border-radius: 10px;
+  margin-left: 10%;
+}
+
+.list-table {
+  margin: auto;
+}
+
+.list-table th {
+  color: rgb(21, 100, 202);
+  display: inline-block;
+  align-items: left;
+  width: 150px;
+}
+
+.list-table tr {
+  display: block;
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+
+.list-table tr:hover {
+  background-color: rgb(241, 238, 238);
+}
+
+.list-table td {
+  text-align: center;
+  display: inline-block;
+  width: 150px;
+}
+
+.deleteItem {
+  cursor: pointer;
+  display: block;
+  width: 60px;
+  font-size: 20px;
+}
+
+.form-cad {
+  width: 97%;
+  margin: auto;
+  padding: 15px 0;
+}
+
+.form-cad a {
+  text-decoration: none;
+  color: rgb(248, 247, 247);
+  margin: 20px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: rgb(21, 100, 202);
+  border-radius: 10px;
+}
+
+.form-cad a:hover {
+  background-color: rgb(56, 132, 231);
+}
+
+.form-cad fieldset {
+  margin: 8px 0;
+  border: none;
+}
+
+.form-cad label {
+  display: inline-block;
+  margin-bottom: 8px;
+  width: 300px;
+}
+
+.form-cad label input {
+  border-radius: 10px;
+  height: 20px;
+}
+
+.form-cad label input[type=text] {
+  width: 200px;
+}
+
+.form-cad .label-rad {
+  width: 70px;
+}
+
+.form-cad button {
+  text-decoration: none;
+  color: rgb(248, 247, 247);
+  margin: 20px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: rgb(21, 100, 202);
+  border-radius: 10px;
+  border: none;
+}
+
+.form-cad button:hover {
+  background-color: rgb(56, 132, 231);
+}
+.form-cad-button {
+  text-align: center;
+}
+

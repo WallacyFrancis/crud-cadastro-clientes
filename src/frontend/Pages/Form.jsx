@@ -3,6 +3,7 @@ import FormPJ from "../Components/FormPJ";
 import FormPF from "../Components/FormPF";
 import { Link } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi';
+import './App.css';
 
 class Form extends Component {
   constructor() {
@@ -25,7 +26,7 @@ class Form extends Component {
   render() {
     const { person } = this.state;
     return(
-      <div>
+      <div className="form-cad">
         <Link to="/clientes">Voltar<BiArrowBack /></Link>
         <form>
           <fieldset>

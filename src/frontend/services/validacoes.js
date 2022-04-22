@@ -35,7 +35,7 @@ export const validatePJ = (data) => {
   }
 
   if (!data.cidade) {
-    alert('Campo "bairro" obrigatório');
+    alert('Campo "cidade" obrigatório');
     return false;
   }
 

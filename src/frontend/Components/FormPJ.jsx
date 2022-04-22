@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { createData } from "../services/request";
+import { validatePJ } from '../services/validacoes';
 
 class FormPJ extends Component {
   constructor() {
@@ -75,7 +76,7 @@ class FormPJ extends Component {
         this.setState({ personPJ: { ...personPJ, numero: value } });
         break;
       case 'complemento':
-        this.setState({ personPJ: { ...personPJ, complemento: value } });
+        this.setState({ personPJ: { ...personPJ, tipo_logradouro: value } });
         break;
       case 'bairro':
         this.setState({ personPJ: { ...personPJ, bairro: value } });
@@ -89,12 +90,15 @@ class FormPJ extends Component {
   }
 
   async hadleClick(e) {
+    e.preventDefault();
+    const { personPJ } = this.state;
     try {
-      e.preventDefault();
-      const { personPJ } = this.state;
-      await createData('/clientes/cadastro', personPJ);
-      window.location.href = 'http://localhost:3000/clientes'
-      console.log(personPJ);
+      if (!validatePJ(personPJ)) {
+        return;
+      } else {
+        await createData('/clientes/cadastro', personPJ);
+        window.location.href = 'http://localhost:3000/clientes'
+      }
     } catch (e) {
       console.log(e)
     }

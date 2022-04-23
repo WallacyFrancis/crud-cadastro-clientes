@@ -26,7 +26,7 @@ npm start
 ~~~
 Para executar o backend
 ~~~
-npm run de
+npm run dev
 ~~~
 
 ## Considerações Finais

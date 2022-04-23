@@ -12,6 +12,10 @@ O desafio consiste em desenvolver uma aplicação frontend com rotas para o mét
 
 
 ## Utilização do projeto
+Para realizar o clone do projeto
+~~~
+git clone git@github.com:WallacyFrancis/desafio-tecnico-crud.git
+~~~
 Para download de todas as bibliotecas
 ~~~
 npm install

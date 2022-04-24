@@ -8,7 +8,7 @@ class FormPJ extends Component {
     super();
     
     this.state = {
-      personPJ: {
+      person: {
         pessoa: 'J',
         status: 'inativo',
         uf: 'AL'
@@ -17,77 +17,14 @@ class FormPJ extends Component {
   }
 
   hadleChange({ target }) {
-    const element = target.name;
-    const value = target.value;
-    const { personPJ } = this.state;
-    switch(element) {
-      case 'raz-social':
-        this.setState({ personPJ: { ...personPJ, razao_social: value } });
-        break;
-      case 'nome-fantasia':
-        this.setState({ personPJ: { ...personPJ, nome: value } });
-        break;
-      case 'cpf-cnpj':
-        this.setState({ personPJ: { ...personPJ, cpf_cnpj: value } });
-        break;
-      case 'status':
-        this.setState({ personPJ: { ...personPJ, status: 'ativo' } });
-        console.log(personPJ)
-        break;
-      case 'ie':
-        this.setState({ personPJ: { ...personPJ, cpf_cnpj: value } });
-        break;
-      case 'im':
-        this.setState({ personPJ: { ...personPJ, cpf_cnpj: value } });
-        break;
-      case 'email':
-        this.setState({ personPJ: { ...personPJ, email: value } });
-        break;
-      case 'nome-responsavel':
-        this.setState({ personPJ: { ...personPJ, nome_responsavel: value } });
-        break;
-      case 'cpf-responsavel':
-        this.setState({ personPJ: { ...personPJ, cpf_responsavel: value } });
-        break;
-      case 'nasc-responsavel':
-        this.setState({ personPJ: { ...personPJ, nascimento_responsavel: value } });
-        break;
-      case 'email-responsavel':
-        this.setState({ personPJ: { ...personPJ, email_responsavel: value } });
-        break;
-      case 'telefone':
-        this.setState({ personPJ: { ...personPJ, telefone: value } });
-        break;
-      case 'celular':
-        this.setState({ personPJ: { ...personPJ, celular: value } });
-        break;
-      case 'cep':
-        this.setState({ personPJ: { ...personPJ, cep: value } });
-        break;
-      case 'cidade':
-        this.setState({ personPJ: { ...personPJ, cidade: value } });
-        break;
-      case 'uf':
-        this.setState({ personPJ: { ...personPJ, uf: value } });
-        break;
-      case 'endereco':
-        this.setState({ personPJ: { ...personPJ, logradouro: value } });
-        break;
-      case 'numero':
-        this.setState({ personPJ: { ...personPJ, numero: value } });
-        break;
-      case 'complemento':
-        this.setState({ personPJ: { ...personPJ, tipo_logradouro: value } });
-        break;
-      case 'bairro':
-        this.setState({ personPJ: { ...personPJ, bairro: value } });
-        break;
-      case 'observacao':
-        this.setState({ personPJ: { ...personPJ, observacao: value } });
-        break;
-      default:
-        console.log('Objeto não identificado');
-    }
+    const { person } = this.state;
+    const { name, value } = target
+    this.setState({
+      person: {
+        ...person,
+        [name]: value
+      }
+    });
   }
 
   async hadleClick(e) {
@@ -112,12 +49,12 @@ class FormPJ extends Component {
           <label>
             Razão Social
             <br />
-            <input type="text" name="raz-social" onChange={ (e) => this.hadleChange(e) }/>
+            <input type="text" name="nome" onChange={ (e) => this.hadleChange(e) }/>
           </label>
           <label>
             Nome Fantasia
             <br />
-            <input type="text" name="nome-fantasia" onChange={ (e) => this.hadleChange(e)}  />
+            <input type="text" name="razao_social" onChange={ (e) => this.hadleChange(e)}  />
           </label>
           <label>
             <input type="checkbox" name="status" onClick={ (e) => this.hadleChange(e)} />
@@ -127,7 +64,7 @@ class FormPJ extends Component {
           <label>
             Cnpj
             <br />
-            <input type="text" name="cpf-cnpj" onChange={ (e) => this.hadleChange(e)} />
+            <input type="text" name="cpf_cnpj" onChange={ (e) => this.hadleChange(e)} />
           </label>
           Contribuinte
           <label className="label-rad">
@@ -140,7 +77,7 @@ class FormPJ extends Component {
           <label>
             Insc. Estadual
             <br />
-            <input type="text" name="ie" onChange={ (e) => this.hadleChange(e)} />
+            <input type="text" name="ie"/>
           </label>
           <label>
             Insc. Municipal
@@ -152,39 +89,50 @@ class FormPJ extends Component {
             <br />
             <input type="email" name="email" onChange={ (e) => this.hadleChange(e)} />
           </label>
+          <br />
+          <label>
+            Telefone
+            <br />
+            <input type="email" name="telefone" onChange={ (e) => this.hadleChange(e)} />
+          </label>
+          <label>
+            Celular
+            <br />
+            <input type="email" name="celular" onChange={ (e) => this.hadleChange(e)} />
+          </label>
         </fieldset>
         <fieldset>
           <label>
             Nome do Responsável
             <br />
-            <input type="text" name="nome-responsavel" onChange={ (e) => this.hadleChange(e)} />
+            <input type="text" name="nome_responsavel" onChange={ (e) => this.hadleChange(e)} />
           </label>
           <br />
           <label>
             CPF
             <br />
-            <input type="text" name="cpf-responsavel" onChange={ (e) => this.hadleChange(e)} />
+            <input type="text" name="cpf_responsavel" onChange={ (e) => this.hadleChange(e)} />
           </label>
           <label>
             Data de Nascimento
             <br />
-            <input type="date" name="nasc-responsavel" onChange={ (e) => this.hadleChange(e)} />
+            <input type="date" name="nascimento_responsavel" onChange={ (e) => this.hadleChange(e)} />
           </label>
           <br />
           <label>
             Telefone
             <br />
-            <input type="text" name="telefone" onChange={ (e) => this.hadleChange(e)} />
+            <input type="text" name="telefone_responsavel" onChange={ (e) => this.hadleChange(e)} />
           </label>
           <label>
             Celular
             <br />
-            <input type="text" name="celular" onChange={ (e) => this.hadleChange(e)} />
+            <input type="text" name="celular_responsavel" onChange={ (e) => this.hadleChange(e)} />
           </label>
           <label>
             E-mail Responsavel 
             <br /> 
-            <input type="email" name="email-responsavel" onChange={ (e) => this.hadleChange(e)} />
+            <input type="email" name="email_responsavel" onChange={ (e) => this.hadleChange(e)} />
           </label>
           <br />
           <label>
@@ -234,7 +182,7 @@ class FormPJ extends Component {
           <label>
             Endereço
             <br />
-            <input type="text" name="endereco" onChange={ (e) => this.hadleChange(e)} />
+            <input type="text" name="logradouro" onChange={ (e) => this.hadleChange(e)} />
           </label>
           <label>
             Número
@@ -245,7 +193,7 @@ class FormPJ extends Component {
           <label>
             Complemento
             <br />
-            <input type="text" name="complemento" onChange={ (e) => this.hadleChange(e)} />
+            <input type="text" name="tipo_logradouro" onChange={ (e) => this.hadleChange(e)} />
           </label>
           <label>
             Bairro

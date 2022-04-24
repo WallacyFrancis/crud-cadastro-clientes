@@ -20,7 +20,7 @@ CREATE TABLE CadClientes.clientes (
     cpf_responsavel VARCHAR(50),
     nascimento_responsavel VARCHAR(50),
     email_responsavel VARCHAR(50),
-    telefone_responseval VARCHAR(50),
+    telefone_responsavel VARCHAR(50),
     celular_responsavel VARCHAR(50),
     cep VARCHAR(50),
     tipo_logradouro VARCHAR(50),

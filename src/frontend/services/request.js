@@ -5,8 +5,7 @@ const api = axios.create({
 });
 
 export const requestData = async (endpoint) => {
-  const { data } = await api.get(endpoint);
-  return data;
+  await api.get(endpoint);
 }
 
 export const deleteData = async (endpoint) => {

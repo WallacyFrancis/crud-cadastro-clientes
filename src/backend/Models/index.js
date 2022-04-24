@@ -7,16 +7,10 @@ const read = async () => {
 };
 
 const create = async (body) => {
-  const { pessoa, status, nome, razao_social, cpf_cnpj, rg, im, cnh, data_nascimento,
-    email, telefone, celular, nome_responsavel, email_responsavel, cpf_responsavel, 
-    nascimento_responsavel, telefone_responseval, celular_responsavel, cep, 
-    tipo_logradouro, logradouro, numero, bairro, cidade, uf, observacao } = body;
+  const { bairro, celular_responsavel, cep, celular, cidade, cpf_cnpj, cpf_responsavel, email, email_responsavel, im, logradouro, nascimento_responsavel, nome, nome_responsavel, numero, observacao, pessoa, razao_social, status, telefone, telefone_responsavel, tipo_logradouro, uf } = body;
   
   const queryPJ = `INSERT INTO CadClientes.clientes
-	  (pessoa, status, nome, razao_social, cpf_cnpj, im, email, telefone, celular, nome_responsavel,
-      email_responsavel, cpf_responsavel, nascimento_responsavel, telefone_responseval,
-      celular_responsavel, cep, tipo_logradouro, logradouro, numero, bairro,
-      cidade, uf, observacao)
+	  (bairro, celular_responsavel, cep, celular, cidade, cpf_cnpj, cpf_responsavel, email, email_responsavel, im, logradouro, nascimento_responsavel, nome, nome_responsavel, numero, observacao, pessoa, razao_social, status, telefone, telefone_responsavel, tipo_logradouro, uf)
     VALUES 
 	    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`;
 
@@ -32,7 +26,7 @@ const create = async (body) => {
         [
           pessoa, status, nome, razao_social, cpf_cnpj, im, email, telefone, celular, 
           nome_responsavel, email_responsavel, cpf_responsavel, nascimento_responsavel, 
-          telefone_responseval, celular_responsavel, cep, tipo_logradouro, logradouro, 
+          telefone_responsavel, celular_responsavel, cep, tipo_logradouro, logradouro, 
           numero, bairro, cidade, uf, observacao,
         ]
       );
@@ -52,13 +46,13 @@ const create = async (body) => {
 const update = async (id, body) => {
   const { pessoa, status, nome, razao_social, cpf_cnpj, rg, im, cnh, data_nascimento,
     email, telefone, celular, nome_responsavel, email_responsavel, cpf_responsavel, 
-    nascimento_responsavel, telefone_responseval, celular_responsavel, cep, 
+    nascimento_responsavel, telefone_responsavel, celular_responsavel, cep, 
     tipo_logradouro, logradouro, numero, bairro, cidade, uf, observacao } = body;
   
   const queryPJ = `UPDATE CadClientes.clientes SET
 	  pessoa = ?, status = ?, nome = ?, razao_social = ?, cpf_cnpj = ?, im = ?, email = ?, telefone = ?,
     celular = ?, nome_responsavel = ?, email_responsavel = ?, cpf_responsavel = ?,
-    nascimento_responsavel = ?, telefone_responseval = ?, celular_responsavel = ?,
+    nascimento_responsavel = ?, telefone_responsavel = ?, celular_responsavel = ?,
     cep = ?, tipo_logradouro = ?, logradouro = ?, numero = ?, bairro = ?, cidade = ?,
     uf = ?, observacao = ?
     WHERE id = ?;`;
@@ -75,7 +69,7 @@ const update = async (id, body) => {
       [
         pessoa, status, nome, razao_social, cpf_cnpj, im, email, telefone, celular, 
         nome_responsavel, email_responsavel, cpf_responsavel, nascimento_responsavel, 
-        telefone_responseval, celular_responsavel, cep, tipo_logradouro, logradouro, 
+        telefone_responsavel, celular_responsavel, cep, tipo_logradouro, logradouro, 
         numero, bairro, cidade, uf, observacao, id,
       ]
     );

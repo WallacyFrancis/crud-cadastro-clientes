@@ -55,14 +55,42 @@ VALUES
     'Rua y', '1234', 'Bairro azul', 'Ribeirão Preto', 'SP',
     'Lorem Ipsum is simply dummy text of the printing and typesetting industry.');
     
-    INSERT INTO CadClientes.clientes
+INSERT INTO CadClientes.clientes
 	(pessoa, status, nome, razao_social, cpf_cnpj, im, email, telefone, celular, nome_responsavel,
 	email_responsavel, cpf_responsavel, nascimento_responsavel, telefone_responseval, celular_responsavel,
     cep, tipo_logradouro, logradouro, numero, bairro, cidade, uf, observacao)
-    VALUES 
+VALUES 
 	('J', 'ativo', 'Empresa 3', 'Empresa 3 LTDA', '12.345.678/0001-12', '000000003',
     'empresa3@email.com', '3512345678', '35912345678', 'Ciclano de Tal', 'ciclano@email.com',
     '123.456.789-00', '10/10/1990', '3512345678', '35912345678', '37950000', 'prédio',
     'Rua z', '1234', 'Jardim margarida', 'Águas Claras', 'RJ',
     'Lorem Ipsum is simply dummy text of the printing and typesetting industry.');
 
+INSERT INTO CadClientes.clientes
+	(pessoa, nome, razao_social, cpf_cnpj, email, telefone, celular, data_nascimento, 
+    rg, cnh, cep, tipo_logradouro, logradouro, numero, bairro, cidade, uf, observacao)
+VALUES 
+	('F', 'João Marcos', 'marquinho', '123.456.789-00', 'joamarcos@email.com', '3512345678',
+    '16912345678', '01/01/1990', '11.222.333', '1234.5678.9123.4567', '38408950', 'casa',
+    'Rua x', '1234', 'Bairro novo', 'São Paulo', 'SP',
+    'Lorem Ipsum is simply dummy text of the printing and typesetting industry.');
+    
+INSERT INTO CadClientes.clientes
+	(pessoa, nome, razao_social, cpf_cnpj, email, telefone, celular, data_nascimento, 
+    rg, cnh, cep, tipo_logradouro, logradouro, numero, bairro, cidade, uf, observacao)
+VALUES 
+	('F', 'Maria Aparecida', 'cida', '123.456.789-00', 'maria@email.com', '3512345678',
+    '16912345678', '01/01/1990', '11.222.333', '1234.5678.9123.4567', '38408950', 'casa',
+    'Rua y', '1234', 'Bairro azul', 'São Paulo', 'SP',
+    'Lorem Ipsum is simply dummy text of the printing and typesetting industry.');
+    
+INSERT INTO CadClientes.clientes
+	(pessoa, nome, razao_social, cpf_cnpj, email, telefone, celular, data_nascimento, 
+    rg, cnh, cep, tipo_logradouro, logradouro, numero, bairro, cidade, uf, observacao)
+VALUES 
+	('F', 'Pedro da Silva', '', '123.456.789-00', 'pedro@email.com', '3512345678',
+    '16912345678', '01/01/1990', '11.222.333', '1234.5678.9123.4567', '38408950', 'casa',
+    'Rua z', '1234', 'Jardim margarida', 'Águas claras', 'RJ',
+    'Lorem Ipsum is simply dummy text of the printing and typesetting industry.');
+
+SET SQL_SAFE_UPDATES = 0;

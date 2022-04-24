@@ -1,8 +1,8 @@
 const Service = require('../Service');
 
-const read = (_req, res) => {
+const read = async (_req, res) => {
   try {
-    const data = Service.read();
+    const data = await Service.read();
     if (!data) return res.status(401).json({ message: 'Not found' });
     res.status(200).json(data);
   } catch (e) {
@@ -10,34 +10,34 @@ const read = (_req, res) => {
   }
 };
 
-const create = (req, res) => {
+const create = async (req, res) => {
   try {
-    const result = Service.create(req.body);
-    res.status(201).json(result);
+    await Service.create(req.body);
+    res.status(201).send('Cadastro realizado com sucesso');
   } catch (e) {
     res.status(400).json({ message: e.message });
   }
 };
 
-const update = (req, res) => {
+const update = async (req, res) => {
   try {
     const { id } = req.params;
-    const result = Service.update(id, req.body);
-    res.status(200).json(result);
+    await Service.update(id, req.body);
+    res.status(200).send('Atualizado com sucesso');
   } catch (e) {
     res.status(400).json({ message: e.message });
   }
-}
+};
 
-const remove = (req, res) => {
+const remove = async (req, res) => {
   try {
     const { id } = req.params;
-    const result = Service.remove(id);
+    const result = await Service.remove(id);
     res.status(200).json(result);
   } catch (e) {
     res.status(400).json({ message: e.message });
   }
-}
+};
 
 
 module.exports = {

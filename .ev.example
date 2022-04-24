@@ -1,0 +1,6 @@
+SQL_HOTS=127.0.0.1
+SQL_PORT=3306
+SQL_USER=root # your user sql
+SQL_PASSWORD= # your password sql
+SQL_DATABASE=CadClientes
+PORT=3001 # port backend

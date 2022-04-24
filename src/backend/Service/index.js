@@ -1,23 +1,20 @@
 const Model = require('../Models')
 
-const read = () => {
-  const data = Model.read();
+const read = async () => {
+  const data = await Model.read();
   return data;
 };
 
-const create = (obj) => {
-  const result = Model.create(obj);
-  return result;
+const create = async (body) => {
+  await Model.create(body);
 };
 
-const update = (id, obj) => {
-  const data = Model.update(id, obj);
-  return data;
+const update = async (id, body) => {
+  await Model.update(id, body);
 }
 
-const remove = (id) => {
-  const data = Model.remove(id);
-  return data;
+const remove = async (id) => {
+  await Model.remove(id);
 }
 
 module.exports =  {

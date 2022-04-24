@@ -5,7 +5,8 @@ const api = axios.create({
 });
 
 export const requestData = async (endpoint) => {
-  await api.get(endpoint);
+  const { data } = await api.get(endpoint);
+  return data;
 }
 
 export const deleteData = async (endpoint) => {
@@ -13,8 +14,7 @@ export const deleteData = async (endpoint) => {
 }
 
 export const createData = async (endpoint, body) => {
-  const { data } = await api.post(endpoint, body)
-  return data;
+  await api.post(endpoint, body);
 }
 
 export const updateData = async (endpoint, body) => {

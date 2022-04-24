@@ -7,40 +7,31 @@ const read = async () => {
 };
 
 const create = async (body) => {
-  const { bairro, celular_responsavel, cep, celular, cidade, cpf_cnpj, cpf_responsavel, email, email_responsavel, im, logradouro, nascimento_responsavel, nome, nome_responsavel, numero, observacao, pessoa, razao_social, status, telefone, telefone_responsavel, tipo_logradouro, uf } = body;
+  const { bairro, celular_responsavel, cep, celular, cidade, cnh, cpf_cnpj, 
+    cpf_responsavel, email, data_nascimento, email_responsavel, im, logradouro, 
+    nascimento_responsavel, nome, nome_responsavel, numero, observacao, 
+    pessoa, razao_social, rg, status, telefone, telefone_responsavel, 
+    tipo_logradouro, uf } = body;
   
-  const queryPJ = `INSERT INTO CadClientes.clientes
-	  (bairro, celular_responsavel, cep, celular, cidade, cpf_cnpj, cpf_responsavel, email, email_responsavel, im, logradouro, nascimento_responsavel, nome, nome_responsavel, numero, observacao, pessoa, razao_social, status, telefone, telefone_responsavel, tipo_logradouro, uf)
+  const query = `INSERT INTO CadClientes.clientes
+	  (bairro, celular_responsavel, cep, celular, cidade, cnh, cpf_cnpj, 
+      cpf_responsavel, email, data_nascimento, email_responsavel, im, logradouro, 
+      nascimento_responsavel, nome, nome_responsavel, numero, observacao, 
+      pessoa, razao_social, rg, status, telefone, telefone_responsavel, 
+      tipo_logradouro, uf)
     VALUES 
-	    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`;
-
-  const queryPF = `INSERT INTO CadClientes.clientes
-	  (pessoa, nome, razao_social, cpf_cnpj, email, telefone, celular, data_nascimento, 
-      rg, cnh, cep, tipo_logradouro, logradouro, numero, bairro, cidade, uf, observacao)
-    VALUES 
-	    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`;
+	    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`;
     
-    if (pessoa === 'J') {
-      await connection.execute(
-        queryPJ,
-        [
-          pessoa, status, nome, razao_social, cpf_cnpj, im, email, telefone, celular, 
-          nome_responsavel, email_responsavel, cpf_responsavel, nascimento_responsavel, 
-          telefone_responsavel, celular_responsavel, cep, tipo_logradouro, logradouro, 
-          numero, bairro, cidade, uf, observacao,
-        ]
-      );
-    }
-
-    if (pessoa === 'F') {
-      await connection.execute(
-        queryPF,
-        [
-          pessoa, nome, razao_social, cpf_cnpj, email, telefone, celular, data_nascimento, 
-          rg, cnh, cep, tipo_logradouro, logradouro, numero, bairro, cidade, uf, observacao,
-        ]
-      );
-    }
+    await connection.execute(
+      query,
+      [
+        bairro, celular_responsavel, cep, celular, cidade, cnh, cpf_cnpj, 
+        cpf_responsavel, email, data_nascimento, email_responsavel, im, logradouro, 
+        nascimento_responsavel, nome, nome_responsavel, numero, observacao, 
+        pessoa, razao_social, rg, status, telefone, telefone_responsavel, 
+        tipo_logradouro, uf,
+      ]
+    );
 };
 
 const update = async (id, body) => {

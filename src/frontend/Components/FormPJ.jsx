@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { createData } from "../services/request";
-import { validatePJ } from '../services/validacoes';
+// import { validatePJ } from '../services/validacoes';
 import { Link } from 'react-router-dom';
 
 class FormPJ extends Component {
@@ -9,9 +9,32 @@ class FormPJ extends Component {
     
     this.state = {
       person: {
-        pessoa: 'J',
-        status: 'inativo',
-        uf: 'AL'
+        bairro: "",
+        celular: "",
+        celular_responsavel: "",
+        cep: "",
+        cidade: "",
+        cnh: "",
+        cpf_cnpj: "",
+        cpf_responsavel: "",
+        data_nascimento: "",
+        email: "",
+        email_responsavel: "",
+        im: "",
+        logradouro: "",
+        nascimento_responsavel: "",
+        nome: "",
+        nome_responsavel: "",
+        numero: "",
+        observacao: "",
+        pessoa: "J",
+        razao_social: "",
+        rg: "",
+        status: "ativo",
+        telefone: "",
+        telefone_responsavel: "",
+        tipo_logradouro: "",
+        uf: "AL",
       }
     }
   }
@@ -22,21 +45,17 @@ class FormPJ extends Component {
     this.setState({
       person: {
         ...person,
-        [name]: value
+        [name]: value,
       }
     });
   }
 
   async hadleClick(e) {
     e.preventDefault();
-    const { personPJ } = this.state;
+    const { person } = this.state;
     try {
-      if (!validatePJ(personPJ)) {
-        return;
-      } else {
-        await createData('/clientes/cadastro', personPJ);
-        window.location.href = 'http://localhost:3000/clientes'
-      }
+      await createData('/clientes/cadastro', person);
+      window.location.href = 'http://localhost:3000/clientes'
     } catch (e) {
       console.log(e)
     }
@@ -47,12 +66,12 @@ class FormPJ extends Component {
       <div>
         <fieldset>
           <label>
-            Razão Social
+            Nome Fantasia
             <br />
             <input type="text" name="nome" onChange={ (e) => this.hadleChange(e) }/>
           </label>
           <label>
-            Nome Fantasia
+            Razão Social
             <br />
             <input type="text" name="razao_social" onChange={ (e) => this.hadleChange(e)}  />
           </label>
@@ -93,12 +112,12 @@ class FormPJ extends Component {
           <label>
             Telefone
             <br />
-            <input type="email" name="telefone" onChange={ (e) => this.hadleChange(e)} />
+            <input type="text" name="telefone" onChange={ (e) => this.hadleChange(e)} />
           </label>
           <label>
             Celular
             <br />
-            <input type="email" name="celular" onChange={ (e) => this.hadleChange(e)} />
+            <input type="text" name="celular" onChange={ (e) => this.hadleChange(e)} />
           </label>
         </fieldset>
         <fieldset>

@@ -29,7 +29,8 @@ class Clientes extends Component {
   async deleteClient(id) {
     try {
       await deleteData(`/clientes/${id}`);
-      window.location.reload();
+      this.requesClients();
+      // window.location.reload();
     } catch (e) {
       console.log(e)
     }

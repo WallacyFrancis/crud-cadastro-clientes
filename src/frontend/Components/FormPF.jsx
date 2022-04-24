@@ -1,89 +1,60 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { createData } from '../services/request';
-import { validatePF } from '../services/validacoes';
 
 class FormPF extends Component {
   constructor() {
     super();
 
     this.state = {
-      personPF: {
-        pessoa: 'J',
-        status: 'inativo',
-        uf: 'AL'
+      person: {
+        bairro: "",
+        celular: "",
+        celular_responsavel: "",
+        cep: "",
+        cidade: "",
+        cnh: "",
+        cpf_cnpj: "",
+        cpf_responsavel: "",
+        data_nascimento: "",
+        email: "",
+        email_responsavel: "",
+        im: "",
+        logradouro: "",
+        nascimento_responsavel: "",
+        nome: "",
+        nome_responsavel: "",
+        numero: "",
+        observacao: "",
+        pessoa: "F",
+        razao_social: "",
+        rg: "",
+        status: "solteiro(a)",
+        telefone: "",
+        telefone_responsavel: "",
+        tipo_logradouro: "",
+        uf: "AL",
       }
     }
   }
 
   hadleChange({ target }) {
-    const element = target.name;
-    const value = target.value;
-    const { personPF } = this.state;
-    switch(element) {
-      case 'nome':
-        this.setState({ personPF: { ...personPF, nome: value } });
-        break;
-      case 'nome-fantasia':
-        this.setState({ personPF: { ...personPF, razao_social: value } });
-        break;
-      case 'cpf-cnpj':
-        this.setState({ personPF: { ...personPF, cpf_cnpj: value } });
-        break;
-      case 'nasc':
-      this.setState({ personPF: { ...personPF, data_nascimento: value } });
-      break;
-      case 'rg':
-      this.setState({ personPF: { ...personPF, rg: value } });
-      break;
-      case 'email':
-        this.setState({ personPF: { ...personPF, email: value } });
-        break;
-      case 'telefone':
-        this.setState({ personPF: { ...personPF, telefone: value } });
-        break;
-      case 'celular':
-        this.setState({ personPF: { ...personPF, celular: value } });
-        break;
-      case 'cep':
-        this.setState({ personPF: { ...personPF, cep: value } });
-        break;
-      case 'cidade':
-        this.setState({ personPF: { ...personPF, cidade: value } });
-        break;
-      case 'uf':
-        this.setState({ personPF: { ...personPF, uf: value } });
-        break;
-      case 'endereco':
-        this.setState({ personPF: { ...personPF, logradouro: value } });
-        break;
-      case 'numero':
-        this.setState({ personPF: { ...personPF, numero: value } });
-        break;
-      case 'complemento':
-        this.setState({ personPF: { ...personPF, tipo_logradouro: value } });
-        break;
-      case 'bairro':
-        this.setState({ personPF: { ...personPF, bairro: value } });
-        break;
-      case 'observacao':
-        this.setState({ personPF: { ...personPF, observacao: value } });
-        break;
-      default:
-        console.log('Objeto não identificado');
-    }
+    const { person } = this.state;
+    const { name, value } = target
+    this.setState({
+      person: {
+        ...person,
+        [name]: value,
+      }
+    });
   }
 
   async hadleClick(e) {
     e.preventDefault();
-    const { personPF } = this.state;
+    const { person } = this.state;
     try {
-      if (!validatePF(personPF)) {
-        return;
-      } else {
-        await createData('/clientes/cadastro', personPF);
-        window.location.href = 'http://localhost:3000/clientes'
-      }
+      await createData('/clientes/cadastro', person);
+      window.location.href = 'http://localhost:3000/clientes'
     } catch (e) {
       console.log(e)
     }
@@ -101,18 +72,18 @@ class FormPF extends Component {
           <label>
             Apelido
             <br />
-            <input type="text" name="nome-fantasia" onChange={ (e) => this.hadleChange(e) } />
+            <input type="text" name="razao_social" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <br />
           <label>
             CPF
             <br />
-            <input type="text" name="cpf-cnpj" onChange={ (e) => this.hadleChange(e) } />
+            <input type="text" name="cpf_cnpj" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <label>
             Data de Nascimento
             <br />
-            <input type="date" name="nasc" onChange={ (e) => this.hadleChange(e) } />
+            <input type="date" name="data_nascimento" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <label>
             Estado Cívil
@@ -125,6 +96,11 @@ class FormPF extends Component {
             </select>
           </label>
           <br />
+          <label>
+            CNH
+            <br />
+            <input type="text" name="cnh" onChange={ (e) => this.hadleChange(e) } />
+          </label>
           <label>
             RG/RNE
             <br />
@@ -234,7 +210,7 @@ class FormPF extends Component {
           <label>
             Endereço
             <br />
-            <input type="text" name="endereco" onChange={ (e) => this.hadleChange(e) } />
+            <input type="text" name="logradouro" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <label>
             Número
@@ -245,7 +221,7 @@ class FormPF extends Component {
           <label>
             Complemento
             <br />
-            <input type="text" name="complemento" onChange={ (e) => this.hadleChange(e) } />
+            <input type="text" name="tipo_logradouro" onChange={ (e) => this.hadleChange(e) } />
           </label>
           <label>
             Bairro

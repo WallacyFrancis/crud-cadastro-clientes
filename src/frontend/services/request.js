@@ -10,8 +10,7 @@ export const requestData = async (endpoint) => {
 }
 
 export const deleteData = async (endpoint) => {
-  const { data } = await api.delete(endpoint)
-  return data;
+  await api.delete(endpoint);
 }
 
 export const createData = async (endpoint, body) => {

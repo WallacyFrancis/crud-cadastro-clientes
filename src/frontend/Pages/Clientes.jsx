@@ -28,8 +28,8 @@ class Clientes extends Component {
 
   async deleteClient(id) {
     try {
-      const data = await deleteData(`/clientes/${id}`);
-      this.setState({ clientes: data });
+      await deleteData(`/clientes/${id}`);
+      window.location.reload();
     } catch (e) {
       console.log(e)
     }
@@ -43,7 +43,7 @@ class Clientes extends Component {
 
   updateClient(e, id) {
     e.preventDefault();
-    window.location.href(`http://clocalhost:3000/clientes/atualizar/${id}`)
+    window.location.href(`http://localhost:3000/clientes/atualizar/${id}`)
   }
 
   componentDidMount() {

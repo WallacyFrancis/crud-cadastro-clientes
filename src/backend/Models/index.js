@@ -1,4 +1,3 @@
-const clientes = require('../API');
 const connection = require('./connection');
 
 const read = async () => {

@@ -8,7 +8,7 @@ O desafio consiste em desenvolver uma aplicação frontend com rotas para o mét
 - Nodejs
 - Express
 - API Rest
-- SOLID
+- MySSQL
 
 
 ## Utilização do projeto
@@ -28,6 +28,9 @@ Para executar o backend
 ~~~
 npm run dev
 ~~~
+
+## Auxiliar com MySQL
+Dentro da pasta raiz, possui um arquivo chamado API.sql, é recomendado rodar as querys do arquivo dentro de um compilador de sql, basta apenas copiar as querys, colar em um compilador sql e executar!
 
 ## Considerações Finais
 Atesto ser o único responsável e desenvolvedor deste projeto, no qual recebi o desafio de realizá-lo por via de um doc. Nenhuma implementação foi copiada de outro conteúdo, por mais que sejam semelhantes

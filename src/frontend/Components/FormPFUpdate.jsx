@@ -46,61 +46,14 @@ class FormPFUpdate extends Component {
   }
 
   hadleChange({ target }) {
-    const element = target.name;
-    const value = target.value;
     const { person } = this.state;
-    switch(element) {
-      case 'nome':
-        this.setState({ person: { ...person, nome: value } });
-        break;
-      case 'nome-fantasia':
-        this.setState({ person: { ...person, razao_social: value } });
-        break;
-      case 'cpf-cnpj':
-        this.setState({ person: { ...person, cpf_cnpj: value } });
-        break;
-      case 'nasc':
-        this.setState({ person: { ...person, data_nascimento: value } });
-        break;
-      case 'rg':
-        this.setState({ person: { ...person, rg: value } });
-        break;
-      case 'email':
-        this.setState({ person: { ...person, email: value } });
-        break;
-      case 'telefone':
-        this.setState({ person: { ...person, telefone: value } });
-        break;
-      case 'celular':
-        this.setState({ person: { ...person, celular: value } });
-        break;
-      case 'cep':
-        this.setState({ person: { ...person, cep: value } });
-        break;
-      case 'cidade':
-        this.setState({ person: { ...person, cidade: value } });
-        break;
-      case 'uf':
-        this.setState({ person: { ...person, uf: value } });
-        break;
-      case 'endereco':
-        this.setState({ person: { ...person, logradouro: value } });
-        break;
-      case 'numero':
-        this.setState({ person: { ...person, numero: value } });
-        break;
-      case 'complemento':
-        this.setState({ person: { ...person, tipo_logradouro: value } });
-        break;
-      case 'bairro':
-        this.setState({ person: { ...person, bairro: value } });
-        break;
-      case 'observacao':
-        this.setState({ person: { ...person, observacao: value } });
-        break;
-      default:
-        console.log('Objeto não identificado');
-    }
+    const { name, value } = target
+    this.setState({
+      person: {
+        ...person,
+        [name]: value,
+      }
+    });
   }
 
   async handleClick(e) {
@@ -135,18 +88,18 @@ class FormPFUpdate extends Component {
             <label>
               Apelido
               <br />
-              <input type="text" name="nome-fantasia" value={ person.razao_social }  onChange={ (e) => this.hadleChange(e) } />
+              <input type="text" name="razao_social" value={ person.razao_social }  onChange={ (e) => this.hadleChange(e) } />
             </label>
             <br />
             <label>
               CPF
               <br />
-              <input type="text" name="cpf-cnpj" value={ person.cpf_cnpj } onChange={ (e) => this.hadleChange(e) } />
+              <input type="text" name="cpf_cnpj" value={ person.cpf_cnpj } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Data de Nascimento
               <br />
-              <input type="date" name="nasc" value={ person.data_nascimento } onChange={ (e) => this.hadleChange(e) } />
+              <input type="date" name="data_nascimento" value={ person.data_nascimento } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Estado Cívil
@@ -268,7 +221,7 @@ class FormPFUpdate extends Component {
             <label>
               Endereço
               <br />
-              <input type="text" name="endereco" value={ person.logradouro } onChange={ (e) => this.hadleChange(e) } />
+              <input type="text" name="logradouro" value={ person.logradouro } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Número
@@ -279,7 +232,7 @@ class FormPFUpdate extends Component {
             <label>
               Complemento
               <br />
-              <input type="text" name="complemento" value={ person.tipo_logradouro } onChange={ (e) => this.hadleChange(e) } />
+              <input type="text" name="tipo_logradouro" value={ person.tipo_logradouro } onChange={ (e) => this.hadleChange(e) } />
             </label>
             <label>
               Bairro

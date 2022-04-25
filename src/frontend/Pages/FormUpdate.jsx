@@ -15,10 +15,11 @@ class FormUpdate extends Component {
 
   async requestClient() {
     const params = location.pathname;
-    const id = params.substring(20)
+    const id = params.substring(20);
     try {
       const data = await requestData('/clientes');
-      const result = data.filter((cliente) => cliente.id === id);
+      const parseId = Number(id);
+      const result = data.filter((cliente) => cliente.id === parseId);
       this.setState({ person: result[0] });
     } catch (e) {
       console.log(e);

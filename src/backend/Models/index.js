@@ -35,46 +35,31 @@ const create = async (body) => {
 };
 
 const update = async (id, body) => {
-  const { pessoa, status, nome, razao_social, cpf_cnpj, rg, im, cnh, data_nascimento,
-    email, telefone, celular, nome_responsavel, email_responsavel, cpf_responsavel, 
-    nascimento_responsavel, telefone_responsavel, celular_responsavel, cep, 
-    tipo_logradouro, logradouro, numero, bairro, cidade, uf, observacao } = body;
+  const { bairro, celular_responsavel, cep, celular, cidade, cnh, cpf_cnpj, 
+    cpf_responsavel, email, data_nascimento, email_responsavel, im, logradouro, 
+    nascimento_responsavel, nome, nome_responsavel, numero, observacao, 
+    pessoa, razao_social, rg, status, telefone, telefone_responsavel, 
+    tipo_logradouro, uf } = body;
   
-  const queryPJ = `UPDATE CadClientes.clientes SET
-	  pessoa = ?, status = ?, nome = ?, razao_social = ?, cpf_cnpj = ?, im = ?, email = ?, telefone = ?,
-    celular = ?, nome_responsavel = ?, email_responsavel = ?, cpf_responsavel = ?,
-    nascimento_responsavel = ?, telefone_responsavel = ?, celular_responsavel = ?,
-    cep = ?, tipo_logradouro = ?, logradouro = ?, numero = ?, bairro = ?, cidade = ?,
-    uf = ?, observacao = ?
+  const query = `UPDATE CadClientes.clientes SET
+    bairro = ?, celular_responsavel = ?, cep = ?, celular = ?, cidade = ?,
+    cnh = ?, cpf_cnpj = ?, cpf_responsavel = ?, email = ?,
+    data_nascimento = ?, email_responsavel = ?, im = ?, logradouro = ?, 
+    nascimento_responsavel = ?, nome = ?, nome_responsavel = ?, numero = ?, observacao = ?, 
+    pessoa = ?, razao_social = ?, rg = ?, status = ?, telefone = ?,
+    telefone_responsavel = ?, tipo_logradouro = ?, uf = ?
     WHERE id = ?;`;
 
-  const queryPF = `UPDATE CadClientes.clientes
-	  pessoa = ?, nome = ?, razao_social = ?, cpf_cnpj = ?, email = ?, telefone = ?,
-    celular = ?, data_nascimento = ?, rg = ?, cnh = ?, cep = ?, tipo_logradouro = ?,
-    logradouro = ?, numero = ?, bairro = ?, cidade = ?, uf = ?, observacao = ?
-    WHERE id = ?;`;
-  
-  if (pessoa === 'J') {
-    await connection.execute(
-      queryPJ,
-      [
-        pessoa, status, nome, razao_social, cpf_cnpj, im, email, telefone, celular, 
-        nome_responsavel, email_responsavel, cpf_responsavel, nascimento_responsavel, 
-        telefone_responsavel, celular_responsavel, cep, tipo_logradouro, logradouro, 
-        numero, bairro, cidade, uf, observacao, id,
-      ]
-    );
-  }
-  
-  if (pessoa === 'F') {
-    await connection.execute(
-      queryPF,
-      [
-        pessoa, nome, razao_social, cpf_cnpj, email, telefone, celular, data_nascimento, 
-        rg, cnh, cep, tipo_logradouro, logradouro, numero, bairro, cidade, uf, observacao, id,
-      ]
-    )
-  }
+  await connection.execute(
+    query,
+    [
+      bairro, celular_responsavel, cep, celular, cidade, cnh, cpf_cnpj, 
+      cpf_responsavel, email, data_nascimento, email_responsavel, im, logradouro, 
+      nascimento_responsavel, nome, nome_responsavel, numero, observacao, 
+      pessoa, razao_social, rg, status, telefone, telefone_responsavel, 
+      tipo_logradouro, uf, id,
+    ]
+  );
 };
 
 const remove = async (id) => {

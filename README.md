@@ -1,7 +1,7 @@
 # desafio-tecnico-crud
 
 ## Sobre o desafio
-O desafio consiste em desenvolver uma aplicação frontend com rotas para o método CRUD de um fromulário para cadastro de dois tipos de clientes, pessoa física e pessoa jurídica
+O projeto consiste em desenvolver uma aplicação fullstack com rotas para o método CRUD de um fromulário para cadastro de dois tipos de clientes, pessoa física e pessoa jurídica
 
 ## Tecnologias utilizadas
 - React
